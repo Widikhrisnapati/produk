@@ -1,0 +1,58 @@
+.container {
+  position: fixed;
+  width: 25%;
+  background-color: #01305c;
+  font-family: "PT Sans Caption", sans-serif;
+
+  height: 100vh;
+  z-index: 1000;
+  & > h2 {
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    margin-top: 3rem;
+    gap: 1rem;
+    & > div {
+      position: relative;
+      cursor: pointer;
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: bold;
+      padding: 0.3rem 1rem;
+      transition: color 0.2s ease-in-out .2s;
+
+      overflow-x: hidden;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin-left: 10%;
+        border-radius: 1rem;
+        background-color: white;
+        scale: 0 1;
+        transform-origin: right;
+        transition: scale 0.2s ease-in-out .2s;
+        z-index: -1;
+
+        
+      }
+      &.selected {
+        color: #01305c;
+        transition: color 0.2s ease-in-out;
+        &::after {
+          scale: 1;
+          transition: scale 0.2s ease-in-out;
+        }
+      }
+    }
+  }
+}

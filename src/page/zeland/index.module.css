@@ -1,0 +1,307 @@
+.section1 {
+  min-height: 100vh;
+  height: 100vh;
+  font-family: "PT Sans Caption", sans-serif;
+  backdrop-filter: blur(5px);
+  & > div:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  & > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+  & > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    & > h1 {
+      font-size: 5rem;
+      color: white;
+    }
+  }
+  & > p {
+    color: white;
+    text-align: center;
+    margin: 0 10%;
+  }
+}
+
+.section2 {
+  min-height: 70vh;
+  padding: 4rem 0;
+  font-family: "PT Sans Caption", sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  & > div:nth-child(1) {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 10vw;
+    margin-left: 2rem;
+    /* background-color: red; */
+    margin: 0 2rem;
+    align-self: stretch;
+    & > div {
+      & > h2 {
+        font-size: 1.5rem;
+      }
+      & > h4 {
+        font-weight: normal;
+        font-size: 0.7rem;
+      }
+    }
+  }
+  & > div:nth-child(2) {
+    width: 50vw;
+    height: 70vh;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.section3 {
+  font-family: "PT Sans Caption", sans-serif;
+  & > h2 {
+    color: #01305c;
+    text-align: center;
+  }
+  & > div {
+    display: grid;
+    margin: 3rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2rem;
+    &:has(div:hover) > div:not(:hover) {
+      opacity: 0.5;
+      scale: 0.9;
+    }
+    & > div {
+      width: 30vw;
+      aspect-ratio: 4/3;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      position: relative;
+      transition: opacity 0.2s ease-in-out, scale 0.2s ease-in-out;
+      cursor: pointer;
+      & > img {
+        width: 100%;
+        height: 100%;
+      }
+      & > h4 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #01305c;
+        color: white;
+        padding: 0.3rem 0;
+        text-align: center;
+        transition: padding 0.2s ease-in-out;
+
+        transform-origin: bottom;
+      }
+
+      &:hover > h4 {
+        padding: 1rem 0;
+        transform-origin: bottom;
+      }
+      &:hover > h3 {
+        scale: 1 0;
+        opacity: 0;
+        transform-origin: center;
+      }
+      & > h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        scale: 1;
+        opacity: 1;
+        transition: scale 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        color: white;
+      }
+    }
+  }
+}
+
+.section4 {
+  font-family: "PT Sans Caption", sans-serif;
+  padding: 2rem 4rem;
+  & > h2 {
+    text-align: center;
+    color: #01305c;
+    margin-bottom: 2rem;
+  }
+  & > div {
+    display: flex;
+    justify-content: space-around;
+    & > div:nth-child(1) {
+      width: 40%;
+      margin-left: 10%;
+      & > h3 {
+        font-weight: normal;
+        font-size: 1rem;
+      }
+    }
+    & > div:nth-child(2) {
+      width: 30%;
+      margin-right: 5%;
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
+
+.section5 {
+  min-height: 60vh;
+  font-family: "PT Sans Caption", sans-serif;
+
+  display: flex;
+  justify-content: space-around;
+  margin: 5rem 10%;
+  &:has(div:hover) > div:not(:hover) {
+    opacity: 0.5;
+    align-self: center;
+  }
+  & > div {
+    position: relative;
+    width: 20vw;
+    min-height: 30vh;
+    max-width: 50vh;
+    background-color: white;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+
+    flex-direction: column;
+    transition: height 0.5s ease-in-out 0.2s, min-height 0.2s ease-in-out 0.2s,
+      opacity 0.2s ease-in-out, scale 0.3s ease-in-out,
+      align-self 0.2s ease-in-out;
+    & > img {
+      width: 100%;
+      height: 70%;
+      transition: height 0.2s ease-in-out 0.2s;
+    }
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      & > div {
+       
+        & > h3 {
+          padding: 1rem 1rem;
+        }
+        & > p {
+          font-weight: normal;
+          word-break: keep-all;
+          font-size:0;
+          scale: 1 0;
+          transform-origin: bottom;
+          padding: 0 1rem;
+          overflow: hidden;
+          transition: scale 0.2s ease-in-out, font-size 0.2s ease-in-out;
+          transform-origin: top;
+        }
+      }
+      & > h6 {
+        padding: 1rem 2rem;
+        font-size: 14px;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+
+    &:hover {
+      scale: 1;
+      min-height: 50vh;
+      transition: height 0.2s ease-in-out, min-height 0.2s ease-in-out;
+      & > img {
+        height: 50%;
+      }
+      & > div {
+        & > div {
+          & > p {
+            scale: 1;
+            font-size: 15px;
+            transform-origin: top;
+            transition: scale 0.2s ease-in-out 0.7s,
+              font-size 0.2s ease-in-out 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .section2 {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    &>div:nth-child(1) {
+      padding: 0;
+      width: 100%;
+      &>div {
+        &>h4 {
+          margin-top: .5rem;
+          font-size: 1rem;
+        }
+      }
+    }
+    &>div:nth-child(2) {
+      margin-inline: auto;
+    }
+  } 
+
+  .section3 {
+    &>div {
+      grid-template-columns: 1fr;
+      &>div {
+        width: 100%;
+      }
+    }
+  }
+
+  .section4 {
+    padding: 2rem 0;
+    &>div {
+      flex-wrap: wrap;
+      &>div:nth-child(1) {
+        width: 100%;
+      }
+      &>div:nth-child(2) {
+        margin-right: 0;
+        margin-inline: auto;
+        width: 100%;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+
+  .section5 {
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    &>div {
+      width: 100%;
+    }
+  }
+}

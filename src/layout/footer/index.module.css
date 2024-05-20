@@ -1,0 +1,36 @@
+.container {
+    min-height: 10vh;
+    
+    width: 100%;
+    background-color: #BFE0FF;
+    & > div {
+        margin: 0 3rem;
+        display: flex;
+        font-family: 'PT Sans Caption', sans-serif;
+        gap :3rem;
+        flex-wrap: wrap;
+        &>div:first-child{
+            width: 250px;
+            height: 60%;
+            
+            &>img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        &>div:not(:first-child) {
+            margin: 10% 0;
+            color: #01305C;
+            max-width: 300px;
+            &>h5 {
+                font-size: 20px;
+            }
+            &>img {
+                width: 130px;
+                object-fit: contain;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,259 @@
+.firstsect {
+  min-height: 100vh;
+  background-color: #4b9ce5;
+  overflow-y: hidden;
+  position: relative;
+  & > img {
+    position: absolute;
+    width: clamp(200px, 400px, 400px);
+    aspect-ratio: 4/3;
+    left: 0;
+    bottom: 0%;
+  }
+  & > div {
+    min-height: 100vh;
+    height: 100%;
+    margin: 0 0;
+    padding: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: "PT Sans Caption", sans-serif;
+    & > div:first-child {
+      color: white;
+      z-index: 100;
+      width: 40%;
+      margin-top: 4rem;
+      & > div:first-child {
+        & > h3 {
+          font-size: 25px;
+        }
+        & > h4 {
+          font-size: 20px;
+        }
+      }
+      & > div:nth-child(2) {
+        margin-top: 5rem;
+        & > p {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+    & > div:last-child {
+      font-family: "PT Sans Caption", sans-serif;
+
+      padding: 1rem 1rem;
+      border-radius: 1rem;
+      background-color: white;
+      height: 100%;
+      width: 40%;
+      & > div {
+        margin: 0 2rem;
+        & > h5 {
+          font-size: 20px;
+          color: #01305c;
+        }
+        & > form {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          gap: .4rem;
+          & > div {
+            min-height: 2.5rem;
+            & > p {
+              font-size: 13px;
+              color: #01305c;
+              font-weight: 500;
+              &:has(~ .inputerror) {
+                color: #ff0000;
+              }
+            }
+            & > p:last-child {
+              font-size: 0px;
+              transition: all 0.5s;
+              color: #ff0000;
+
+              &.inputerror {
+                font-size: 12px;
+              }
+            }
+            & > button {
+              all: unset;
+              width: 100%;
+              cursor: pointer;
+
+              background-color: #01305c;
+              color: white;
+              text-align: center;
+              padding: 1rem 0.5rem;
+              border-radius: 0.5rem;
+              transition: all 0.3s;
+              &:hover {
+                background-color: #ff0000;
+              }
+              &:active {
+                background-color: #01305c;
+              }
+            }
+
+            & > input,
+            & > textarea {
+              all: unset;
+              font-size: 13px;
+              width: 100%;
+              border-radius: 0.5rem;
+              color: #01305c;
+              border: 2px solid #01305c;
+              padding: 0.2rem 0.2rem;
+              margin-top: 0.5rem;
+              &.inputerror {
+                border-color: #ff0000;
+                color: #ff0000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.secondsect {
+  min-height: 50vh;
+  font-family: "PT Sans Caption", sans-serif;
+
+  & > div {
+    margin: 0 5%;
+    padding: 2rem 0;
+    & > h2 {
+      color: #01305c;
+      text-align: center;
+    }
+    & > div {
+      display: flex;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      & > div {
+        width: 250px;
+        background-color: #4b9ce5;
+        color: white;
+        font-size: 13px;
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        align-self: stretch;
+        & > img {
+          width: 200px;
+          aspect-ratio: 1/1;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+.thirdsect {
+  min-height: 80vh;
+  font-family: "PT Sans Caption", sans-serif;
+  background-color: #c1dbf6;
+  & > div {
+    margin: 0 10%;
+    padding: 2rem 0;
+    min-height: 80vh;
+    & > h3 {
+      color: #01305c;
+      text-align: center;
+      font-size: 25px;
+    }
+    & > div {
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      & > div {
+        position: relative;
+        width: 30%;
+        margin-bottom: 250px;
+        & > div:first-child {
+          display: flex;
+          justify-content: center;
+          & > img {
+            width: 250px;
+            height: 150px;
+          }
+        }
+
+        & > div:nth-child(2) {
+          position: absolute;
+          top: 80%;
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.8);
+          min-height: 200px;
+          border-radius: 1rem;
+          & > div {
+            padding: 0.5rem;
+            padding-bottom: 2rem;
+            & > div {
+              margin-top: 2rem;
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+              & > p {
+                margin: 0 1rem;
+                color: #1563b4;
+                font-size: 12px;
+              }
+              & > h4 {
+                margin: 0 1rem;
+                color: #1563b4;
+              }
+            }
+            &>img:last-child {
+                position: absolute;
+                right : 10px;
+                bottom : 10;
+              }
+          }
+         
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .firstsect {
+    &>img {
+      width: 50%;
+      z-index: 1;
+    }
+    &>div {
+      padding-top: 0;
+      flex-wrap: wrap;
+      margin-bottom: 10vw;
+      &>div:nth-child(1) {
+        width: 90%;
+      }
+
+      &>div:nth-child(2) {
+        width: 90%;
+        margin-top: 2rem;
+        z-index: 2;
+      }
+      
+    }
+  }
+
+  .thirdsect {
+    &>div {
+      &>div {
+         &>div {
+          width: 90%;
+         }
+      }
+    }
+  }
+}

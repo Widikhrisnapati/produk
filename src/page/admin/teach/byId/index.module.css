@@ -1,0 +1,34 @@
+.container {
+    font-family: "PT Sans Caption", sans-serif;
+    color: #01305c;
+    margin: 2rem 0;
+    &>h2 {
+        font-size: 2rem;
+    }
+    &>div:nth-child(2) {
+        width: 30%;
+        height: 300px;
+       
+        &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &>div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        gap :1.5rem;
+        margin: 2rem 0;
+    }
+    &>a {
+        all :unset;
+        background-color: #01305c;
+        border-radius: .5rem;
+        padding: .3rem .5rem;;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

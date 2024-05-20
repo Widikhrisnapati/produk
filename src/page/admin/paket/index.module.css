@@ -1,0 +1,14 @@
+.container {
+    font-family: "PT Sans Caption", sans-serif;
+    &>p {
+        color: #01305c;
+    }
+    &>div {
+        margin-top: 2rem;
+        width: 100%;
+        overflow: auto;
+        &>table {
+            
+        }
+    }
+}

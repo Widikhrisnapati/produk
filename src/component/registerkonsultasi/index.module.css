@@ -1,0 +1,184 @@
+.register {
+  background-color: #205763;
+  min-height: 70vh;
+  font-family: "PT Sans Caption", sans-serif;
+  padding: 2rem 0;
+  transition: height 0.2s ease-in-out;
+  & > div {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    transition: height 0.2s ease-in-out;
+    & > div {
+      align-self: stretch;
+    }
+    & > :nth-child(1) {
+      position: relative;
+      & > h2 {
+        color: white;
+      }
+      & > div {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+        & > h5,
+        & > h4 {
+          z-index: 101;
+          text-align: center;
+          color: white;
+        }
+        & > h5 {
+          font-size: 17px;
+        }
+        & > h4 {
+          font-size: 25px;
+        }
+        & > div {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          background-color: #5690ff;
+          width: 100px;
+          aspect-ratio: 1/1;
+          z-index: 100;
+          border-radius: 50%;
+        }
+      }
+    }
+    & > :nth-child(2) {
+      background-color: #5690ff;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 60vh;
+      transition: min-height 0.2s ease-in-out;
+
+      & > h2 {
+        color: white;
+        font-size: 20px;
+      }
+
+      & > form {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        height: 100%;
+
+        & > input {
+          all: unset;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          border: 1px solid black;
+          background-color: white;
+        }
+        & > button {
+          all: unset;
+          padding: 1rem 1rem;
+          text-align: center;
+          background-color: black;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+          border-radius: 0.5rem;
+        }
+
+        & > div:nth-child(4) {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.5rem;
+          & > :nth-child(1) {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-size: 0.7rem;
+            align-items: center;
+            & > input {
+              all: unset;
+              position: relative;
+              min-width: 40px;
+              height: 20px;
+              cursor: pointer;
+              border-radius: 1rem;
+              background-color: white;
+              transition: all 0.2s ease-in-out;
+
+              &::after {
+                content: "";
+                background-color: #205763;
+                height: 100%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 90%;
+                translate: 0 -50%;
+                aspect-ratio: 1/1;
+                border-radius: 100%;
+                transition: all 0.2s ease-in-out;
+              }
+              &:checked {
+                background-color: #205763;
+                &::after {
+                  background-color: white;
+                  translate: 100% -50%;
+                }
+              }
+            }
+          }
+
+          & > div:nth-child(2) {
+            display: flex;
+            width: 100%;
+            height: 0;
+            transition: height 0.2s ease-in-out;
+
+            & > input {
+              all: unset;
+              scale: 1 0;
+              padding: 0.3rem 1rem;
+              border-radius: 0.5rem;
+              border: 1px solid black;
+              background-color: white;
+              opacity: 0;
+              transform-origin: top;
+              width: 100%;
+              transition: all 0.2s ease-in-out;
+            }
+          }
+
+          &:has(:nth-child(1) > input:checked) > :nth-child(2) {
+            height: 2rem;
+            & > input {
+              scale: 1;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .register {
+    &>div {
+      &>div:nth-child(1) {
+        margin-bottom: 2rem;
+        &>div {
+          display: none;
+        }
+        
+      }
+      &>div:nth-child(2) {
+        /* display: none; */
+      }
+    }
+  }
+}

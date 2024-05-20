@@ -1,0 +1,76 @@
+
+.review {
+    min-width: 20%;
+    width: 20%;
+    height: 80%;
+    padding: 0 3rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #01305c;
+    font-family: "PT Sans Caption", sans-serif;
+    border-radius: 0.5rem;
+  
+    &:first-child {
+      margin-left: 2rem;
+    }
+    &:last-child {
+      margin-right: 2rem;
+    }
+    & > p {
+      color: grey;
+      font-weight: bold;
+    }
+    & > div {
+      & > p {
+        margin-top: 2rem;
+        font-size: 14px;
+      }
+    }
+  }
+
+
+  
+.reviews {
+    height: 70vh;
+    min-height: 50vh;
+    background-color: whitesmoke;
+    user-select: none;
+    & > div {
+      height: 100%;
+      display: flex;
+      flex: 1 0 auto;
+      flex-wrap: nowrap;
+      align-items: center;
+      overflow: scroll;
+
+      /* overflow: hidden; */
+      transition: translate .2s ease-in-out;
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .reviews {
+      &>div {
+        gap : .5rem;
+        padding : 0;
+        scroll-snap-type: x mandatory;
+      }
+    }
+
+    .review {
+      min-width: 100%;
+      scroll-snap-align: start;
+      padding: 0 .5rem;
+      &:first-child {
+        margin-left: 1rem;
+      }
+      &:last-child {
+        margin-right: 1rem;
+      }
+    }
+  }

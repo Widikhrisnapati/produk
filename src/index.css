@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&display=swap');
+
+* {
+  margin : 0;
+  padding : 0;
+  --hidden : auto;
+}
+
+
+
+html, body {
+  /* overflow-x: hidden; */
+  /* max-width: 100vw; */
+}
+
+html.hidden {
+  overflow-y: hidden;
+}
+
+
+@keyframes showOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.admintable {
+  min-width: 100vw;
+  font-family: "PT Sans Caption", sans-serif;
+
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  border-color: #f3f0f0;
+  &>thead {
+    background-color: #f3f0f0;
+    &>th {
+      padding: .5rem .5rem;
+      &:nth-child(1) {
+        border-radius: 1rem 0 0 1rem;
+      }
+      &:last-child {
+        border-radius: 0 1rem 1rem 0;
+      }
+    }
+  }
+  &>tbody {
+    &>tr {
+      background-color: #f3f0f0;
+      margin: 1rem 0;
+      &>td {
+        padding: .5rem .5rem;
+        text-align: center;
+        &:nth-child(1) {
+          border-radius: 1rem 0 0 1rem;
+        }
+        &:last-child {
+          border-radius: 0 1rem 1rem 0;
+        }
+        &>button {
+          all : unset;
+          background-color: #01305c;
+          padding: .3rem 1rem;
+          color: white;
+          border-radius: .5rem;
+          cursor: pointer;
+        }
+        &>a {
+          all : unset;
+          background-color: #01305c;
+          padding: .3rem 1rem;
+          color: white;
+          border-radius: .5rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
